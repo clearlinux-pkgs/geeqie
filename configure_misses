@@ -1,0 +1,4 @@
+Configure miss: gnome-doc-tool
+Configure miss: if LIRC support is enabled
+Configure miss: TIFFClientOpen in -ltiff
+Configure miss: FFMPEGTHUMBNAILER
