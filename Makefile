@@ -1,5 +1,5 @@
 PKG_NAME := geeqie
-URL = http://geeqie.org/geeqie-1.5.tar.xz
+URL = https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common

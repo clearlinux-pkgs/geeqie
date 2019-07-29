@@ -6,10 +6,10 @@
 #
 Name     : geeqie
 Version  : 1.5
-Release  : 1
-URL      : http://geeqie.org/geeqie-1.5.tar.xz
-Source0  : http://geeqie.org/geeqie-1.5.tar.xz
-Source1 : http://geeqie.org/geeqie-1.5.tar.xz.asc
+Release  : 2
+URL      : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz
+Source0  : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz
+Source1 : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -99,7 +99,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564423056
+export SOURCE_DATE_EPOCH=1564425137
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -116,7 +116,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1564423056
+export SOURCE_DATE_EPOCH=1564425137
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/geeqie
 cp COPYING %{buildroot}/usr/share/package-licenses/geeqie/COPYING
