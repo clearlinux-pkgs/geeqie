@@ -6,10 +6,10 @@
 #
 Name     : geeqie
 Version  : 1.5
-Release  : 2
+Release  : 3
 URL      : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz
 Source0  : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz
-Source1 : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz.asc
+Source1  : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -26,6 +26,7 @@ BuildRequires : intltool-dev
 BuildRequires : libjpeg-turbo-dev
 BuildRequires : libtool-dev
 BuildRequires : lua-dev
+BuildRequires : perl
 BuildRequires : perl(XML::Parser)
 BuildRequires : pkgconfig(champlain-0.12)
 BuildRequires : pkgconfig(champlain-gtk-0.12)
@@ -35,6 +36,7 @@ BuildRequires : pkgconfig(gthread-2.0)
 BuildRequires : pkgconfig(gtk+-2.0)
 BuildRequires : pkgconfig(lcms2)
 BuildRequires : pkgconfig(poppler-glib)
+Patch1: geeqie-1.5.1-no_common.patch
 
 %description
 Translators create a translation by creating the appropriate .po file in the /po
@@ -93,17 +95,19 @@ man components for the geeqie package.
 
 %prep
 %setup -q -n geeqie-1.5
+cd %{_builddir}/geeqie-1.5
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564425137
+export SOURCE_DATE_EPOCH=1589815447
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static --disable-lua
 make  %{?_smp_mflags}
@@ -116,10 +120,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1564425137
+export SOURCE_DATE_EPOCH=1589815447
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/geeqie
-cp COPYING %{buildroot}/usr/share/package-licenses/geeqie/COPYING
+cp %{_builddir}/geeqie-1.5/COPYING %{buildroot}/usr/share/package-licenses/geeqie/4cc77b90af91e615a64ae04893fdffa7939db84c
 %make_install
 %find_lang geeqie
 
@@ -163,7 +167,7 @@ cp COPYING %{buildroot}/usr/share/package-licenses/geeqie/COPYING
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/geeqie/COPYING
+/usr/share/package-licenses/geeqie/4cc77b90af91e615a64ae04893fdffa7939db84c
 
 %files man
 %defattr(0644,root,root,0755)
