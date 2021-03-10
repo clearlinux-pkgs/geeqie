@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xA67C0AB18019F6AC (Mowgli@mowgli.ch)
 #
 Name     : geeqie
-Version  : 1.5
-Release  : 4
-URL      : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz
-Source0  : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz
-Source1  : https://github.com/BestImageViewer/geeqie/releases/download/v1.5/geeqie-1.5.tar.xz.asc
+Version  : 1.6
+Release  : 5
+URL      : https://github.com/BestImageViewer/geeqie/releases/download/v1.6/geeqie-1.6.tar.xz
+Source0  : https://github.com/BestImageViewer/geeqie/releases/download/v1.6/geeqie-1.6.tar.xz
+Source1  : https://github.com/BestImageViewer/geeqie/releases/download/v1.6/geeqie-1.6.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -25,7 +25,6 @@ BuildRequires : intltool
 BuildRequires : intltool-dev
 BuildRequires : libjpeg-turbo-dev
 BuildRequires : libtool-dev
-BuildRequires : lua-dev
 BuildRequires : perl
 BuildRequires : perl(XML::Parser)
 BuildRequires : pkgconfig(champlain-0.12)
@@ -35,8 +34,9 @@ BuildRequires : pkgconfig(exiv2)
 BuildRequires : pkgconfig(gthread-2.0)
 BuildRequires : pkgconfig(gtk+-2.0)
 BuildRequires : pkgconfig(lcms2)
+BuildRequires : pkgconfig(libopenjp2)
+BuildRequires : pkgconfig(libwebp)
 BuildRequires : pkgconfig(poppler-glib)
-Patch1: geeqie-1.5.1-no_common.patch
 
 %description
 Translators create a translation by creating the appropriate .po file in the /po
@@ -94,16 +94,15 @@ man components for the geeqie package.
 
 
 %prep
-%setup -q -n geeqie-1.5
-cd %{_builddir}/geeqie-1.5
-%patch1 -p1
+%setup -q -n geeqie-1.6
+cd %{_builddir}/geeqie-1.6
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589815447
+export SOURCE_DATE_EPOCH=1615405021
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -117,13 +116,13 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check
+make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1589815447
+export SOURCE_DATE_EPOCH=1615405021
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/geeqie
-cp %{_builddir}/geeqie-1.5/COPYING %{buildroot}/usr/share/package-licenses/geeqie/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/geeqie-1.6/COPYING %{buildroot}/usr/share/package-licenses/geeqie/4cc77b90af91e615a64ae04893fdffa7939db84c
 %make_install
 %find_lang geeqie
 
@@ -140,6 +139,7 @@ cp %{_builddir}/geeqie-1.5/COPYING %{buildroot}/usr/share/package-licenses/geeqi
 /usr/lib/geeqie/geeqie-tethered-photography-hook-script
 /usr/lib/geeqie/geeqie-ufraw
 /usr/lib/geeqie/geocode-parameters.awk
+/usr/lib/geeqie/lensID
 
 %files bin
 %defattr(-,root,root,-)
@@ -159,6 +159,7 @@ cp %{_builddir}/geeqie-1.5/COPYING %{buildroot}/usr/share/package-licenses/geeqi
 /usr/share/geeqie/applications/symlink.desktop
 /usr/share/geeqie/applications/tethered-photography.desktop
 /usr/share/geeqie/template.desktop
+/usr/share/metainfo/org.geeqie.Geeqie.appdata.xml
 /usr/share/pixmaps/geeqie.png
 
 %files doc

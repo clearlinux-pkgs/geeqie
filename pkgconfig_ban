@@ -1,4 +1,8 @@
 # This file contains pkgconfig build requirements that get picked up
 # but are undesirable. One entry per line, no whitespace.
+ddjvuapi
 libffmpegthumbnailer
+libheif
 lua5.1
+lua5.2
+lua5.3
