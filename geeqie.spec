@@ -6,7 +6,7 @@
 #
 Name     : geeqie
 Version  : 1.6
-Release  : 5
+Release  : 6
 URL      : https://github.com/BestImageViewer/geeqie/releases/download/v1.6/geeqie-1.6.tar.xz
 Source0  : https://github.com/BestImageViewer/geeqie/releases/download/v1.6/geeqie-1.6.tar.xz
 Source1  : https://github.com/BestImageViewer/geeqie/releases/download/v1.6/geeqie-1.6.tar.xz.asc
