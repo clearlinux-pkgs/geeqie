@@ -1,11 +1,10 @@
-libX11.so.6
+libarchive.so.13
 libc.so.6
 libcairo.so.2
 libchamplain-0.12.so.0
 libchamplain-gtk-0.12.so.0
 libclutter-1.0.so.0
 libclutter-gtk-1.0.so.0
-libcogl.so.20
 libexiv2.so.27
 libgcc_s.so.1
 libgdk-3.so.0
@@ -13,6 +12,7 @@ libgdk_pixbuf-2.0.so.0
 libgio-2.0.so.0
 libglib-2.0.so.0
 libgobject-2.0.so.0
+libgspell-1.so.2
 libgtk-3.so.0
 libjpeg.so.62
 liblcms2.so.2
@@ -21,6 +21,6 @@ libopenjp2.so.7
 libpango-1.0.so.0
 libpangocairo-1.0.so.0
 libpoppler-glib.so.8
-libpthread.so.0
+libraw.so.20
 libstdc++.so.6
 libwebp.so.7

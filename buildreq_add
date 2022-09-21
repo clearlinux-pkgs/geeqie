@@ -2,3 +2,6 @@
 # picked up automatically. One name per line, no whitespace.
 libtool-dev
 intltool-dev
+
+# for use of `xxd` in a shell script
+vim

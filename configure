@@ -1,1 +1,2 @@
---disable-lua
+-Djpegxl=disabled
+-Dlua=disabled
