@@ -1,11 +1,9 @@
-2.0.1
-doxygen
+2.1
 exiv2-dev
 gspell-dev
 lcms2-dev
 libarchive-dev
 libchamplain-dev
-libwebp-dev
 pandoc
 pkgconfig(champlain-0.12)
 pkgconfig(champlain-gtk-0.12)
@@ -15,5 +13,7 @@ pkgconfig(lcms2)
 pkgconfig(libarchive)
 pkgconfig(libopenjp2)
 pkgconfig(libraw)
-pkgconfig(libwebp)
+pkgconfig(libtiff-4)
 pkgconfig(poppler-glib)
+xvfb-run
+zenity
