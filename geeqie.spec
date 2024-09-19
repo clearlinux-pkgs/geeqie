@@ -9,7 +9,7 @@
 #
 Name     : geeqie
 Version  : 2.4
-Release  : 18
+Release  : 19
 URL      : https://github.com/BestImageViewer/geeqie/releases/download/v2.4/geeqie-2.4.tar.xz
 Source0  : https://github.com/BestImageViewer/geeqie/releases/download/v2.4/geeqie-2.4.tar.xz
 Source1  : https://github.com/BestImageViewer/geeqie/releases/download/v2.4/geeqie-2.4.tar.xz.asc
