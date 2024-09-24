@@ -1,10 +1,11 @@
-2.4
+2.5
 exiv2-dev
 gspell-dev
 lcms2-dev
 libarchive-dev
 libchamplain-dev
 libwebp-dev
+libxslt-bin
 pandoc
 pkgconfig(champlain-0.12)
 pkgconfig(champlain-gtk-0.12)
@@ -12,9 +13,11 @@ pkgconfig(exiv2)
 pkgconfig(gspell-1)
 pkgconfig(lcms2)
 pkgconfig(libarchive)
+pkgconfig(libdw)
 pkgconfig(libopenjp2)
 pkgconfig(libraw)
 pkgconfig(libtiff-4)
+pkgconfig(libunwind)
 pkgconfig(libwebp)
 pkgconfig(poppler-glib)
 xvfb-run
